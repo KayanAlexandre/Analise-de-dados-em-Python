@@ -1,10 +1,9 @@
 """
 Redes sociais no Brasil (TikTok, Instagram, WhatsApp e YouTube) com DADOS REAIS.
-Gera index.html (site com uma aba por rede) e dados_redes_sociais.csv na pasta do script.
+Gera apenas index.html (site com uma aba por rede) na pasta do script.
 
 Instalar: pip install numpy pandas matplotlib seaborn
 Rodar:    python analise_redes_sociais.py
-
 """
 import base64
 import io
@@ -252,7 +251,6 @@ def montar_site():
 if __name__ == "__main__":
     pasta = Path(__file__).parent
     df = tabela_dados()
-    df.to_csv(pasta / "dados_redes_sociais.csv", index=False, encoding="utf-8-sig")
     print(df.groupby(["rede", "indicador"])["valor"].agg(["count", "sum"]).round(1))
     (pasta / "index.html").write_text(montar_site(), encoding="utf-8")
     print("Site gerado em", pasta / "index.html")
