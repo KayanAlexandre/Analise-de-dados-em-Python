@@ -5,9 +5,6 @@ Gera index.html (site com uma aba por rede) e dados_redes_sociais.csv na pasta d
 Instalar: pip install numpy pandas matplotlib seaborn
 Rodar:    python analise_redes_sociais.py
 
-Para atualizar um numero, edite o dicionario REDES abaixo e rode de novo.
-Itens com proxy=True usam um indicador oficial parecido (Cetic.br), pois nao
-existe dado publico por rede para aquele recorte. Isso aparece no site.
 """
 import base64
 import io
